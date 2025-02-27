@@ -13,11 +13,12 @@ class _MyHomePage extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepOrange,
-        title: const Text(
-          "Title Nih!",
-          style: TextStyle(
-              fontSize: 19, color: Colors.white, fontWeight: FontWeight.w500),
-        ),
+        toolbarHeight: 200,
+        // title: const Text(
+        //   "Title Nih!",
+        //   style: TextStyle(
+        //       fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500),
+        // ),
       ),
     );
   }
