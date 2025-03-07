@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter1/pages/home.dart';
+import 'package:my_flutter1/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyHomePage());
+    return MaterialApp(
+        theme: ThemeData(fontFamily: 'Poppins'), home: HomeScreen());
   }
 }
