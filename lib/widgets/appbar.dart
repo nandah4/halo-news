@@ -7,18 +7,26 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.amber,
       title: Text(
         title,
-        style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
+        style: TextStyle(fontWeight: FontWeight.w400, fontSize: 25),
       ),
       centerTitle: false,
       actions: [
-        Row(
-          children: [
-            Text("Icon 1"),
-            Text("Icon 2"),
-          ],
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              border: Border.all(width: 1, color: Colors.grey),
+              borderRadius: BorderRadius.circular(20)),
+          child: Row(
+            children: [
+              Icon(
+                Icons.notifications_on_outlined,
+                size: 28,
+              )
+            ],
+          ),
         )
       ],
     );
