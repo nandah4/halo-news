@@ -118,6 +118,35 @@ class HomeScreen extends StatelessWidget {
                     ),
                   );
                 }).toList()),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 25),
+            height: 33,
+            width: MediaQuery.of(context).size.width,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: scrollMenu.length,
+                itemBuilder: (context, item) {
+                  return Padding(
+                    padding:
+                        EdgeInsets.only(left: item == 0 ? 16 : 5, right: 5),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color:
+                              item == 0 ? Colors.green[800] : Colors.grey[200],
+                          borderRadius: BorderRadius.circular(18)),
+                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      alignment: Alignment.center,
+                      child: Text(
+                        '${scrollMenu[item]}',
+                        style: TextStyle(
+                          color: item == 0 ? Colors.white : Colors.grey[700],
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  );
+                }),
           )
         ],
       ),
