@@ -13,11 +13,12 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: AppBar(
+          toolbarHeight: preferredSize.height,
           titleSpacing: 0,
           centerTitle: false,
           title: Text(
             title,
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
           ),
           actions: [
             Row(
@@ -46,11 +47,11 @@ class AppBarCustom extends StatelessWidget implements PreferredSizeWidget {
                       height: 20,
                     )),
               ],
-            )
+            ),
           ]),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(85);
 }
