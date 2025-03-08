@@ -1,15 +1,15 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:my_flutter1/data/data_article.dart';
+import 'package:my_flutter1/themes/group_colors.dart';
 import 'package:my_flutter1/widgets/appbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  final String author = "Nicole Goodkind";
-  final int times = 3;
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).extension<ColorsGroup>();
     return Scaffold(
       appBar: AppBarCustom(title: "Halo."),
       body: ListView(
@@ -33,7 +33,15 @@ class HomeScreen extends StatelessWidget {
                         Container(
                             width: double.infinity,
                             height: double.infinity,
-                            color: Colors.black12.withAlpha(30)),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [
+                                    Colors.transparent,
+                                    Colors.black.withValues(alpha: 0.6),
+                                  ],
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter),
+                            )),
                         Positioned(
                             top: 16,
                             left: 16,
@@ -50,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             )),
                         Positioned(
-                            bottom: 90,
+                            bottom: 16,
                             left: 16,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,6 +84,34 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 8),
+                                  width: 320,
+                                  child: Text(
+                                    '${datas['title']}',
+                                    style: TextStyle(
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 13),
+                                  child: Row(children: [
+                                    Container(
+                                        margin: EdgeInsets.only(right: 5),
+                                        height: 2.5,
+                                        width: 25,
+                                        color: colors?.backgroundCategory
+                                            ?.withValues(alpha: 0.5)),
+                                    Container(
+                                        margin: EdgeInsets.only(right: 5),
+                                        height: 2.5,
+                                        width: 25,
+                                        color: colors?.backgroundCategory
+                                            ?.withValues(alpha: 0.9))
+                                  ]),
+                                )
                               ],
                             )),
                       ],
