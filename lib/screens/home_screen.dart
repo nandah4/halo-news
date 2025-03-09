@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter1/data/data_article.dart';
 import 'package:my_flutter1/themes/group_colors.dart';
 import 'package:my_flutter1/widgets/appbar.dart';
+import 'package:my_flutter1/widgets/card_list_tile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -128,8 +129,9 @@ class HomeScreen extends StatelessWidget {
                 itemCount: scrollMenu.length,
                 itemBuilder: (context, item) {
                   return Padding(
-                    padding:
-                        EdgeInsets.only(left: item == 0 ? 16 : 5, right: 5),
+                    padding: EdgeInsets.only(
+                        left: item == 0 ? 16 : 5,
+                        right: item == scrollMenu.length - 1 ? 16 : 5),
                     child: Container(
                       decoration: BoxDecoration(
                           color:
@@ -147,7 +149,46 @@ class HomeScreen extends StatelessWidget {
                     ),
                   );
                 }),
+          ),
+          Container(
+            child: ListView.builder(itemBuilder: (context, item) {}),
           )
+
+          // SizedBox(
+          //     width: MediaQuery.of(context).size.width,
+          //     height: MediaQuery.of(context).size.height,
+          //     child: Expanded(
+          //       child: ListView.builder(
+          //           scrollDirection: Axis.vertical,
+          //           shrinkWrap: true,
+          //           physics: NeverScrollableScrollPhysics(),
+          //           itemCount: 2,
+          //           itemBuilder: (context, item) {
+          //             return CustomListTile(
+          //                 image: 'assets/images/hero-slide1.jpg',
+          //                 imageAuthor: 'assets/images/hero-slide1.jpg',
+          //                 nameAuthor: 'John Doe',
+          //                 title: 'Lorem Ipsum',
+          //                 category: 'category',
+          //                 hour: 1,
+          //                 icon: Icon(Icons.ac_unit));
+          //             // return ListTile(
+          //             //   minTileHeight: 100,
+          //             //   leading: ClipRRect(
+          //             //     borderRadius: BorderRadius.circular(10),
+          //             //     child: Image.asset(
+          //             //       'assets/images/hero-slide1.jpg',
+          //             //       height: 100,
+          //             //       width: 100,
+          //             //       fit: BoxFit.cover,
+          //             //     ),
+          //             //   ),
+          //             //   title: Text("Item ke - ${item + 1}"),
+          //             //   subtitle: Text("Lorem ipsum dolor sit amet!"),
+          //             //   trailing: Icon(Icons.save_as_rounded),
+          //             // );
+          //           }),
+          //     )),
         ],
       ),
     );
