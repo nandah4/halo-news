@@ -1,4 +1,4 @@
-# my_flutter1
+# Halo News.
 
 A new Flutter project.
 
