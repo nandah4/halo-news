@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -173,7 +174,105 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        child: Row(),
+        color: Colors.white,
+        shadowColor: Colors.black,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 40,
+          children: [
+            Column(
+              children: [
+                Image.asset(
+                  'assets/icons/home-icons.png',
+                  height: 25,
+                  width: 25,
+                  color: Colors.green[800],
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "Home",
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.green[800]),
+                )
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset(
+                  'assets/icons/discovery-icon.png',
+                  height: 25,
+                  width: 25,
+                  color: Colors.grey[600],
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "Discover",
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey[600]),
+                )
+              ],
+            ),
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Column(
+                  children: [
+                    Image.asset(
+                      'assets/icons/bookmark-icon.png',
+                      height: 25,
+                      width: 25,
+                      color: Colors.grey[600],
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "Save",
+                      style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey[600]),
+                    ),
+                  ],
+                ),
+                Positioned(
+                    top: -3,
+                    right: 3,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.green[800],
+                          borderRadius: BorderRadius.circular(20)),
+                      width: 9,
+                      height: 9,
+                    ))
+              ],
+            ),
+            Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(30),
+                  child: Image.asset(
+                    'assets/images/hero-slide1.jpg',
+                    height: 28,
+                    width: 28,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                SizedBox(height: 5),
+                Text(
+                  "Profile",
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey[600]),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
